@@ -1,40 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <header><h1><center>Smash Ultimate Bravery</center></h1></header> 
-    <p>
-        <center><h2><b><u>Gamemode Rules:</u></b></h2>
-            <b>Conventional:</b> The normal way to play! One character, one move, all random.</br></br>
-            <i><b>Lentil:</b></i> An additional twist! Along with being given one character and move, you're also given an extra challenge to complete!</br></br>
-            <i><b>IMPOSSIBLE:</b></i> The worst of the worst. Characters and moves drawn from a pool of the hardest, worst, most useless, or most technical moves in the game! Good luck!</br></br></center>
-        </p>
-    </br>
-    <body>
-        <center><div id="gamemode">
-            <fieldset>
-              <legend><b>Choose your mode:</b></legend>
-                <input type="radio" name="mode" id="con" value="con" checked>Conventional</br>
-                <input type="radio" name="mode" id="len" value="len">Lentil</br>
-                <input type="radio" name="mode" id="imp" value="imp">Impossible</br>
-            </fieldset>
-        </div>
 
-        <div id="dlcselection">
-            <fieldset>
-              <legend><b>Include DLC?</b></legend>
-                <input type="radio" name="char" id="dlc" value="yes" checked>DLC</br>
-                <input type="radio" name="char" id="nodlc" value="no" >No DLC</br>
-            </fieldset>
-        </div>
-            <div id="results">
-              <span id="sentence1"><b>Your character:</b></span><div id="charactersfinal"></div></br>
-              <span id="sentence2"><b>Your move is:</b></span><div id="movesfinal"></div></br>
-              <span id="sentence3"><b>Your challenge is:</b></span><div id="lentilsfinal"></div></br>
-              <span id="sentence4"><b>Your impossible character and move is:</b></span><div id="impossiblefinal"></div></br>
-</div></center>
-        <div id="superbutton">
-          <center><button onclick="myFunction()">Go!</button></br></center>
-        </div>
+  <header>
+    <h1>Smash Ultimate Bravery</h1>
+    <script>
+      function myFunction() {
+        var characters = ["Mario", "Donkey Kong", "Link", "Samus", "Yoshi", "Kirby", "Fox", "Pikachu", "Dark Samus", "Luigi",
+        "Ness", "Captain Falcon", "Jigglypuff", "Princess Peach", "Princess Daisy", "Bowser", "Ice Climbers", "Sheik", "Princess Zelda", "Dr. Mario",
+        "Pichu", "Falco", "Marth", "Lucina", "Young Link", "Ganondorf", "Mewtwo", "Roy", "Chrom", "Mr. Game & Watch", "Meta Knight", "Pit", "Dark Pit",
+        "Zero Suit Samus", "Wario", "Snake", "Ike", "Charizard", "Bulbasaur", "Squirtle", "Diddy Kong", "Lucas", "Sonic", "King Dedede", "Olimar", "Lucario",
+        "R.O.B", "Toon Link", "Wolf", "Villager", "Mega Man", "Wii Fit Trainer", "Rosalina", "Little Mac", "Greninja", "Palutena", "Pac-Man", "Robin", "Shulk",
+        "Bowser Jr.", "Duck Hunt", "Ryu", "Ken", "Cloud", "Corrin", "Bayonetta", "Inkling", "Ridley", "Simon", "Richter", "King K. Rool", "Isabelle", "Incineroar",
+        "Mii Brawler", "Mii Swordfighter", "Mii Gunner", "Piranha Plant", "Joker", "Hero", "Banjo and Kazooie", "Terry", "Byleth", "Min Min", "Steve", "Sephiroth",
+        "Pyra", "Mythra", "Kazuya", "Sora"];
 
-    </body>
+        var moves = ["Jab", "Forward Tilt", "Up Tilt", "Down Tilt", "Up-Air", "Down-Air", "Forward-Air", "Back-Air", "Foward Smash",
+            "Down Smash", "Up Smash", "Neutral Special", "Up Special", "Down Special", "Side Special"];
 
-    </html>
+        var lentils = ["Teabag after every kill", "SD at start of game", "Walk only", "Pinpoint Accuracy", "Comeback", "JV3"];
+
+        var impossible = ["Mario & Down Special" , "Luigi & Down Taunt" , "Captain Falcon & Neutral Special" , "Snake & Box Taunt"];
+         
+        var gencharacters = function() {
+            return characters[Math.floor(Math.random() * characters.length)]
+            };
+
+        var genmoves = function() {
+            return moves[Math.floor(Math.random() * moves.length)];
+            };
+
+        var genimpossible = function() {
+            return impossible[Math.floor(Math.random() * impossible.length)];
+            };
+
+        var genlentils = function() {
+            return lentils[Math.floor(Math.random() * lentils.length)];
+            };
+
+        var charactersfinal = gencharacters();
+        var movesfinal = genmoves();
+        var lentilsfinal = genlentils();
+        var impossiblefinal = genimpossible();
+        System.out.println(charactersfinal);
+        System.out.println(movesfinal);
+        System.out.println(lentilsfinal);
+        System.out.println(impossiblefinal);
+        }
+    </script>
+  </header>
+  </br>
+
+  <body>
+    <p><b><u>Be sure to deselect <i>DLC</i> characters if you don't have them!</u></b></p>
+    <p class="info">
+      <h2><b>Gamemode Rules:</b></h2>
+      <b>Conventional:</b> The normal way to play! One character, one move, all random.</br></br>
+      <i><b>Lentil:</b></i> An additional twist! Along with being given one character and move, you're also given an extra challenge to complete!</br></br>
+      <b><i>IMPOSSIBLE:</i></b> The worst of the worst. Characters/moves drawn from a pool of the hardest, worst, most useless, or most technical moves in the game! Good luck!</br></br>
+
+    </p>
+
+      <div class="container">
+        <button generator="myFunction()">Go!</button>
+        <span class="section">Your <b>character</b> is:</span><span id='character'></span></br>
+        <span class="section">Your <b>move</b> is:</span><span id="move"></span></br>
+        <span class="section">Your <b>challenge</b> is:</span><span id="lentil"></span></br>
+        <span class="section">Your <b>IMPOSSIBLE</b> combo is:</span><span id="impossible"></span></br>
+
+      </div>
+
+  </body>
+
+</html>
