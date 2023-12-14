@@ -1,0 +1,28 @@
+#gamemode {
+  position: relative;
+  right: 200px;
+  bottom: 10px;
+  width: 350px;
+}
+
+#dlcselection {
+  position: relative;
+  top: 15px;
+  right: 200px;
+  width: 350px;
+}
+
+#results {
+  position: relative;
+  left: 250px;
+  bottom: 240px;
+  width: 350px;
+  padding: 20px;
+  margin:30px;
+  border: 5px solid black;
+}
+
+#superbutton {
+  position: relative;
+  bottom: 240px;
+}
