@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <header><h1><center>Smash Ultimate Bravery</center></h1></header> 
+    <p>
+        <center><h2><b><u>Gamemode Rules:</u></b></h2>
+            <b>Conventional:</b> The normal way to play! One character, one move, all random.</br></br>
+            <i><b>Lentil:</b></i> An additional twist! Along with being given one character and move, you're also given an extra challenge to complete!</br></br>
+            <i><b>IMPOSSIBLE:</b></i> The worst of the worst. Characters and moves drawn from a pool of the hardest, worst, most useless, or most technical moves in the game! Good luck!</br></br></center>
+        </p>
+    </br>
+    <body>
+        <center><div id="gamemode">
+            <fieldset>
+              <legend><b>Choose your mode:</b></legend>
+                <input type="radio" name="mode" id="con" value="con" checked>Conventional</br>
+                <input type="radio" name="mode" id="len" value="len">Lentil</br>
+                <input type="radio" name="mode" id="imp" value="imp">Impossible</br>
+            </fieldset>
+        </div>
+
+        <div id="dlcselection">
+            <fieldset>
+              <legend><b>Include DLC?</b></legend>
+                <input type="radio" name="char" id="dlc" value="yes" checked>DLC</br>
+                <input type="radio" name="char" id="nodlc" value="no" >No DLC</br>
+            </fieldset>
+        </div>
+            <div id="results">
+              <span id="sentence1"><b>Your character:</b></span><div id="charactersfinal"></div></br>
+              <span id="sentence2"><b>Your move is:</b></span><div id="movesfinal"></div></br>
+              <span id="sentence3"><b>Your challenge is:</b></span><div id="lentilsfinal"></div></br>
+              <span id="sentence4"><b>Your impossible character and move is:</b></span><div id="impossiblefinal"></div></br>
+</div></center>
+        <div id="superbutton">
+          <center><button onclick="myFunction()">Go!</button></br></center>
+        </div>
+
+    </body>
+
+    </html>
